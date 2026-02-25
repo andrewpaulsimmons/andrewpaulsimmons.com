@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WORK | Andrew Paul Simmons</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div>
+      <h1><a href="index.html">Andrew Paul Simmons</a></h1>
+      <p>PRODUCT ENGINEER</p>
+    </div>
+  </div>
+  <nav>
+    <a href="index.html">BLOG</a>
+    <a href="work.html" class="active">WORK</a>
+    <a href="about-me.html">ABOUT ME</a>
+  </nav>
+</header>
+
+<div class="work-section">
+  <h2 class="work-title">WORK</h2>
+
+  <div class="timeline" id="work-timeline">
+    <div class="tl-line" id="work-line"></div>
+
+    <div class="tl-entry">
+      <div class="tl-content">
+        <div class="tl-location">New York</div>
+        <div class="tl-dates">2019 - present</div>
+        <div class="tl-company">Uber</div>
+        <div class="tl-role">Lead Mobile Engineer</div>
+        <div class="tl-details">
+          Uber One - Membership on Eats / Rides<br>
+          Eats App - Add-On Orders<br>
+          FinProd - Uber Money
+        </div>
+        <a href="posts/uber-mobile-framework/" class="tl-more">read more ></a>
+      </div>
+      <div class="tl-dot"></div>
+    </div>
+
+    <div class="tl-entry">
+      <div class="tl-content">
+        <div class="tl-dates">2016 - 2019</div>
+        <div class="tl-company">Tumblr / Yahoo</div>
+        <div class="tl-role">Lead Mobile Engineer</div>
+        <div class="tl-details">
+          Ads products<br>
+          Group Chat
+        </div>
+      </div>
+      <div class="tl-dot"></div>
+    </div>
+
+    <div class="tl-entry">
+      <div class="tl-content">
+        <div class="tl-location">London</div>
+        <div class="tl-dates">2014 - 2016</div>
+        <div class="tl-company">IceCream</div>
+        <div class="tl-role">Head of Engineering</div>
+        <div class="tl-details">
+          Cloud Camera App<br>
+          Social Photo Discovery
+        </div>
+      </div>
+      <div class="tl-dot"></div>
+    </div>
+
+    <div class="tl-entry">
+      <div class="tl-content">
+        <div class="tl-dates">2012 - 2014</div>
+        <div class="tl-company">Flowboard App - Treemo Labs</div>
+        <div class="tl-role">VP, Product</div>
+        <div class="tl-details">
+          Tabby Award Winner<br>
+          Gizmodo App of the Day
+        </div>
+      </div>
+      <div class="tl-dot"></div>
+    </div>
+
+    <div class="tl-entry">
+      <div class="tl-content">
+        <div class="tl-location">Seattle</div>
+        <div class="tl-dates">2008 - 2012</div>
+        <div class="tl-company">CBS Apps - Treemo Labs</div>
+        <div class="tl-role">Director, Mobile</div>
+        <div class="tl-details">
+          Lead on team that built original apps for the following shows:<br>
+          - CBS News<br>
+          - 60 Minutes<br>
+          - 48 Hours<br>
+          - CNET News<br>
+          - Survivor<br>
+          - Big Brother<br>
+          - others
+        </div>
+      </div>
+      <div class="tl-dot"></div>
+    </div>
+
+    <div class="tl-entry">
+      <div class="tl-content">
+        <div class="tl-dates">2007 - 2008</div>
+        <div class="tl-company">Interactive Web - Treemo Labs</div>
+        <div class="tl-role">Front End Engineer</div>
+      </div>
+      <div class="tl-dot"></div>
+    </div>
+
+  </div>
+
+  <h2 class="work-title">EDUCATION</h2>
+
+  <div class="timeline" id="edu-timeline">
+    <div class="tl-line" id="edu-line"></div>
+
+    <div class="tl-entry">
+      <div class="tl-content">
+        <div class="tl-dates">2013</div>
+        <div class="tl-company">MBA</div>
+        <div class="tl-role">Seattle University</div>
+        <div class="tl-details">Specialization in Entrepreneurship / New Product Development</div>
+      </div>
+      <div class="tl-dot"></div>
+    </div>
+
+    <div class="tl-entry">
+      <div class="tl-content">
+        <div class="tl-dates">2007</div>
+        <div class="tl-company">BS Computer Science</div>
+        <div class="tl-role">Western Washington University</div>
+        <div class="tl-details">Minor in Mathematics · Magna Cum Laude</div>
+      </div>
+      <div class="tl-dot"></div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div>&copy; 2026 by Andrew Paul Simmons.</div>
+  <div>
+    <b>Write</b>
+    <a href="mailto:hello@andrewpaulsimmons.com">hello@andrewpaulsimmons.com</a>
+  </div>
+  <div>
+    <b>Follow</b>
+    <div class="social">
+      <a href="https://twitter.com/AndrewPSimmons" target="_blank">𝕏</a>
+      <a href="https://www.linkedin.com/in/andrewpaulsimmons/" target="_blank">in</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var workLine = document.getElementById('work-line');
+  setTimeout(function() { workLine.classList.add('animate'); }, 800);
+
+  var eduLine = document.getElementById('edu-line');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        eduLine.classList.add('animate');
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.51 });
+  observer.observe(document.getElementById('edu-timeline'));
+});
+</script>
+</body>
+</html>

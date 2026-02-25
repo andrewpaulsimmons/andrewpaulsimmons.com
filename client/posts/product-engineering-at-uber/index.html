@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Engineering at Uber</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div>
+      <h1><a href="../../index.html">Andrew Paul Simmons</a></h1>
+      <p>PRODUCT ENGINEER</p>
+    </div>
+  </div>
+  <nav>
+    <a href="../../index.html">BLOG</a>
+    <a href="../../work.html">WORK</a>
+    <a href="../../about-me.html">ABOUT ME</a>
+  </nav>
+</header>
+
+<article>
+  <div class="post-meta">Dec 19, 2022 · 4 min read</div>
+  <h2>Product Engineering at Uber</h2>
+
+  <img src="images/uber-eats-delivery-hires.jpg" alt="Uber Eats delivery person on a bicycle in a city">
+
+  <p>Why Uber? I joined Uber for a chance to work on products that blurred the lines between the physical and digital world. Uber is like a remote control for your city. You launch the app and a car just shows up and takes you exactly to your destination, or you browse Uber Eats and in short order almost anything you could imagine eating will be provided to you at your doorstep. Uber is the only one doing this at a global scale. For me, the departure from moving just pixels with a tap to moving the real world is a thrilling proposition!</p>
+
+  <p>One of the most interesting things about Uber is that it is infrastructure for millions of people and business that now allows them to simply go about their daily lives. People are choosing to live in places they never would have before a ride downtown was just a tap away. Businesses are popping up in farther away places knowing that their customers will still pop over in an Uber. Cloud-kitchens are operating near residential areas leveraging gig delivery to provide high end food from known restaurants at a fraction of the cost to the owner. This creates a really amazing flywheel for Uber.</p>
+
+  <p>Finally, Uber is fundamentally an app company, which I find incredibly appealing. Doing more than $100 billion in gross bookings a year, almost all through a deceivingly simple touchscreen experience, Uber iOS and Android apps operate at a level of scale only achieved by 4 or 5 companies in the world.</p>
+
+  <h3>Three key things I've learned at Uber</h3>
+
+  <p><strong>Even with hundreds of engineers on a single app, it's possible to move extremely quickly.</strong> Using the right architecture that allows each small team to operate within their own code paths on top of well tested foundations makes it possible to move extremely fast to launch and iteration. This is one of Uber's key strengths. The RIBs mobile architecture made most projects feel like greenfield projects and importantly kept the speed of development at 110% at all times.</p>
+
+  <p><strong>It's possible to build relationships and be highly effective while working in a distributed team.</strong> I've worked with core team membership for years that I have not had a chance to meet in person. Most of my team lives in different cities in North America, but we have a fantastic time building things together everyday, and have the same level of trust and support that I would expect from a good in-office team.</p>
+
+  <p><strong>Analytics at scale must be implemented at the framework level and the framework must enforce completeness of data.</strong> With new entry points and new variations of user flows being introduced all of the time, it was essential to build detailed analytics into our core framework to allow us to track complex user behavior through a large number of dynamic flows.</p>
+
+  <h3>A few notable projects</h3>
+
+  <h4>Uber One (Membership)</h4>
+  <p>Co-architected the ActionCard framework that would be the foundation for all Membership / Uber One features across Uber Eats and Uber "Rides" apps. This project involved rewriting UberOne from scratch along with all related features throughout both apps. I led the migration with a team of 10 mobile engineers. The new implementation is built on 11 simple reusable card UI elements and about 30 unique actions the users can perform. Actions can be attached to any card. Screens are now composed of cards and actions making it possible to launch new features across apps with minimal new code. Actions can perform complex flows through a series of screens and update app state to reflect changes. Because Uber One requires a large number of screens (more than 16 and counting) and many unique variations of each, the ActionCard pattern allowed us to build highly targeted unique user flows with very little additional mobile effort.</p>
+
+  <h4>Add-On Orders</h4>
+  <p>Designed the original concept for Uber Add-On orders, a feature where a user can add another purchase from a nearby store onto an existing order at little to no additional cost. This allows one courier to do multiple pickups, making it a very efficient way to order even more stuff. The feature was a huge success and has continued to evolve.</p>
+
+  <h4>Uber "Bank"</h4>
+  <p>I initially joined Uber to be part of a team working on a very experimental "banking" project. It was a part of the Money2020 initiative. I was hired as a core engineer to help build out this division. The project was and is still relatively top secret. It was an awesome opportunity to work with some of the smartest and hardest working people I've ever met. I felt like it was a real startup, and I think we all learned a lot and pushed the limits of our own potential to the max. We built relationships from the experience that have held us together to this day, and even though we don't all live in the same city anymore we still have a "secret" private slack channel where we share details about comp, rumors on org changes and promo hacks that couldn't be discussed in the same way in any other context.</p>
+</article>
+
+<footer>
+  <div>&copy; 2026 by Andrew Paul Simmons.</div>
+  <div>
+    <b>Write</b>
+    <a href="mailto:hello@andrewpaulsimmons.com">hello@andrewpaulsimmons.com</a>
+  </div>
+  <div>
+    <b>Follow</b>
+    <div class="social">
+      <a href="https://twitter.com/AndrewPSimmons" target="_blank">𝕏</a>
+      <a href="https://www.linkedin.com/in/andrewpaulsimmons/" target="_blank">in</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

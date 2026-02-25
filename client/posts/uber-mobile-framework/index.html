@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Architecting a mobile framework at Uber</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div>
+      <h1><a href="../../index.html">Andrew Paul Simmons</a></h1>
+      <p>PRODUCT ENGINEER</p>
+    </div>
+  </div>
+  <nav>
+    <a href="../../index.html">BLOG</a>
+    <a href="../../work.html">WORK</a>
+    <a href="../../about-me.html">ABOUT ME</a>
+  </nav>
+</header>
+
+<article>
+  <div class="post-meta">Mar 5, 2023 · 1 min read</div>
+  <h2>Architecting a mobile framework at Uber that allowed us to launch 4x faster and write 75% less code.</h2>
+
+  <img src="images/uber-eats-actioncard-pattern-hires.webp" alt="Uber Eats ActionCard design pattern diagram">
+
+  <p>At the beginning of last year, my team started with a dizzying array of features to launch and we had a short amount of time for each. Our goal was to expand the Uber One feature set across multiple apps and fast. We started by architecting a new design pattern called the ActionCard Pattern.</p>
+
+  <p>The basic idea is to decouple all logic into reusable actions and layouts into reusable cards. We then allowed the API response to determine the order that the cards would appear along with styling properties for each card. The API responses also attached actions to the cards. With this we were able to avoid wiring up new UI and attaching logic for each screen. Instead we would only add single cards or actions to the framework when launching a new feature or flow.</p>
+
+  <p>I wrote a detailed engineering blog about the architecture we used here in hopes it may be useful to other mobile teams.</p>
+
+  <p>Read my article on the Uber Engineering Blog:<br>
+  <a href="https://www.uber.com/blog/action-card-architecture/" target="_blank"><strong>How the Uber Membership Team Developed the ActionCard Design Pattern to Do More with Less</strong></a></p>
+</article>
+
+<footer>
+  <div>&copy; 2026 by Andrew Paul Simmons.</div>
+  <div>
+    <b>Write</b>
+    <a href="mailto:hello@andrewpaulsimmons.com">hello@andrewpaulsimmons.com</a>
+  </div>
+  <div>
+    <b>Follow</b>
+    <div class="social">
+      <a href="https://twitter.com/AndrewPSimmons" target="_blank">𝕏</a>
+      <a href="https://www.linkedin.com/in/andrewpaulsimmons/" target="_blank">in</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

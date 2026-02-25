@@ -4,9 +4,36 @@ import { type Server } from "http";
 import viteConfig from "../vite.config";
 import fs from "fs";
 import path from "path";
-import { nanoid } from "nanoid";
 
 const viteLogger = createLogger();
+
+const clientDir = path.resolve(import.meta.dirname, "..", "client");
+
+function resolveHtmlFile(urlPath: string): string | null {
+  const clean = urlPath.split("?")[0].split("#")[0];
+
+  if (clean === "/" || clean === "/index.html") {
+    return path.join(clientDir, "index.html");
+  }
+
+  if (clean.endsWith(".html")) {
+    const candidate = path.join(clientDir, clean);
+    if (fs.existsSync(candidate)) return candidate;
+  }
+
+  if (clean.endsWith("/")) {
+    const candidate = path.join(clientDir, clean, "index.html");
+    if (fs.existsSync(candidate)) return candidate;
+  }
+
+  const withHtml = path.join(clientDir, clean + ".html");
+  if (fs.existsSync(withHtml)) return withHtml;
+
+  const withIndex = path.join(clientDir, clean, "index.html");
+  if (fs.existsSync(withIndex)) return withIndex;
+
+  return null;
+}
 
 export async function setupVite(server: Server, app: Express) {
   const serverOptions = {
@@ -33,21 +60,14 @@ export async function setupVite(server: Server, app: Express) {
 
   app.use("/{*path}", async (req, res, next) => {
     const url = req.originalUrl;
+    const htmlFile = resolveHtmlFile(url);
+
+    if (!htmlFile) {
+      return next();
+    }
 
     try {
-      const clientTemplate = path.resolve(
-        import.meta.dirname,
-        "..",
-        "client",
-        "index.html",
-      );
-
-      // always reload the index.html file from disk incase it changes
-      let template = await fs.promises.readFile(clientTemplate, "utf-8");
-      template = template.replace(
-        `src="/src/main.tsx"`,
-        `src="/src/main.tsx?v=${nanoid()}"`,
-      );
+      const template = await fs.promises.readFile(htmlFile, "utf-8");
       const page = await vite.transformIndexHtml(url, template);
       res.status(200).set({ "Content-Type": "text/html" }).end(page);
     } catch (e) {

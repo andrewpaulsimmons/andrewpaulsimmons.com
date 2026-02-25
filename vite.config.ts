@@ -28,7 +28,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(root, "index.html"),
-        about: path.resolve(root, "about-me.html"),
+        blog: path.resolve(root, "blog.html"),
         work: path.resolve(root, "work.html"),
         postChat: path.resolve(root, "posts/chat-is-not-the-final-interface/index.html"),
         postCgui: path.resolve(root, "posts/conversational-gui/index.html"),

@@ -30,6 +30,7 @@ export default defineConfig({
         main: path.resolve(root, "index.html"),
         blog: path.resolve(root, "blog.html"),
         work: path.resolve(root, "work.html"),
+        postChatTactile: path.resolve(root, "posts/chat-plus-tactile-ui/index.html"),
         postChat: path.resolve(root, "posts/chat-is-not-the-final-interface/index.html"),
         postCgui: path.resolve(root, "posts/conversational-gui/index.html"),
         postUber: path.resolve(root, "posts/product-engineering-at-uber/index.html"),

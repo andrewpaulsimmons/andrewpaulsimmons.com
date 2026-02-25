@@ -209,7 +209,10 @@ article a { color: #e63946; text-decoration: underline; }
   text-decoration: underline;
 }
 @media (max-width: 700px) {
-  .timeline::before { left: 8px; }
+  .tl-line {
+    left: 8px;
+    transform: none;
+  }
   .tl-entry, .tl-entry:nth-child(odd), .tl-entry:nth-child(even) {
     width: 100%;
     margin-left: 0;
@@ -306,8 +309,11 @@ article a { color: #e63946; text-decoration: underline; }
   margin-bottom: 32px;
 }
 .btn {
-  display: inline-block;
-  padding: 10px 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 36px;
+  border: 2px solid transparent;
   border-radius: 24px;
   font-size: 14px;
   font-weight: 700;
@@ -332,10 +338,31 @@ article a { color: #e63946; text-decoration: underline; }
   margin-bottom: 16px;
 }
 @media (max-width: 700px) {
-  .hello-section { flex-direction: column; gap: 32px; }
+  .hello-section {
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    min-height: auto;
+  }
   .hello-left { flex: none; }
-  .hello-stripe { width: 120px; }
-  .hello-heading { font-size: 50px; }
+  .hello-stripe { display: none; }
+  .hello-card {
+    box-shadow: none;
+    padding: 16px 0 0;
+    margin-top: 0;
+  }
+  .hello-photo {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 0;
+  }
+  .hello-card h3 { display: none; }
+  .hello-title { display: none; }
+  .hello-social { display: none; }
+  .hello-right { padding-top: 24px; }
+  .hello-heading { font-size: 44px; }
+  .hello-subtitle { font-size: 19px; }
+  .hello-bio p { font-size: 15px; }
 }
 
 /* ── Footer ── */

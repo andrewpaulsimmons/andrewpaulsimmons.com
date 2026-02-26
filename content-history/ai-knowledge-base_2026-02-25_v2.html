@@ -29,15 +29,13 @@
 
   <p><em>How a folder of markdown files became the most productive tool in my workflow</em></p>
 
-  <p>I have a folder on my computer. No code in it. No application, no database, no build system. Just markdown files organized into subdirectories: vision, products, technical architecture, research, marketing, decisions.</p>
+  <p>I've been using Cursor with Claude as my primary working environment for a few months now. Not just for code. For product strategy, marketing copy, research, decision-making, and content generation. I can open the same repo in Cursor for hands-on work or load it into the Claude desktop app for longer thinking sessions. The knowledge base works in both because it's just files.</p>
 
-  <p>I can open that folder in Cursor and work on it with Claude the same way a developer works on a codebase or just open it in the Claude app and it instantly has full context. Either way, the AI reads the files, understands the project, and picks up where the last conversation left off.</p>
+  <p>Somewhere along the way I realized the bottleneck wasn't the AI. It was me. I kept starting fresh conversations, re-explaining context, watching the model reach the same conclusions I'd already arrived at last week. Every new chat was amnesia. Good amnesia, because the model is smart. But amnesia.</p>
 
-  <p>This is my knowledge base. And it's become the most productive tool in my workflow.</p>
+  <p>So I started building a knowledge base. Not a wiki. Not a Notion workspace. A folder of markdown files in a git repo, organized by topic, written in plain language, and designed so that an AI agent could get up to speed on my entire project in under 30 seconds.</p>
 
-  <p>It started because I kept hitting the same wall. Every new conversation with an AI was a cold start. I'd spend 5-10 minutes re-explaining context, re-stating decisions I'd already made, watching the model reach the same conclusions I'd arrived at last week. The conversations were good. But the context disappeared when they ended.</p>
-
-  <p>So I started writing things down in a format the AI could actually use. Not a wiki for humans. A folder of plain text files designed so an AI agent could get up to speed on my entire project in under 30 seconds.</p>
+  <p>It changed everything about how I work.</p>
 
   <h3>The Setup</h3>
 
@@ -95,25 +93,25 @@
 
   <p>I changed how I write documents once I understood how the agent reads them.</p>
 
-  <p>Short files. If a single file grows past 500 lines, the agent has to search within it or read it in chunks, which means it might miss context. Splitting a long document into focused files means each one gets read in full.</p>
+  <p><strong>Short files.</strong> If a single file grows past 500 lines, the agent has to search within it or read it in chunks, which means it might miss context. Splitting a long document into focused files means each one gets read in full.</p>
 
-  <p>Front-matter summaries. Every file starts with a one-line description, usually as a blockquote. The agent can read the first few lines and decide whether it needs the rest.</p>
+  <p><strong>Front-matter summaries.</strong> Every file starts with a one-line description, usually as a blockquote. The agent can read the first few lines and decide whether it needs the rest.</p>
 
-  <p>One topic per file. If a product spec also contains research notes and a marketing draft, searches return that file for too many queries. Noise goes up, relevance goes down.</p>
+  <p><strong>One topic per file.</strong> If a product spec also contains research notes and a marketing draft, searches return that file for too many queries. Noise goes up, relevance goes down.</p>
 
-  <p>Descriptive filenames. <code>nlu-intent-research.md</code> tells the agent what's inside without opening it. <code>notes-v2-final.md</code> tells it nothing.</p>
+  <p><strong>Descriptive filenames.</strong> <code>nlu-intent-research.md</code> tells the agent what's inside without opening it. <code>notes-v2-final.md</code> tells it nothing.</p>
 
   <h3>What It's Good At Now</h3>
 
   <p>With 30+ documents covering the full project, the knowledge base handles a few things well.</p>
 
-  <p>Starting new conversations cold. I don't prep the agent anymore. I just say "read the repo and get up to speed" and it does. Thirty seconds later it can answer detailed questions about architecture, marketing strategy, competitive landscape, or product specs.</p>
+  <p><strong>Starting new conversations cold.</strong> I don't prep the agent anymore. I just say "read the repo and get up to speed" and it does. Thirty seconds later it can answer detailed questions about architecture, marketing strategy, competitive landscape, or product specs.</p>
 
-  <p>Generating prompts for other agents. When I need to spin up a separate agent for a specific task (building a demo, writing code, designing a feature), I can ask the knowledge base agent to generate a detailed prompt that includes all the relevant context from the repo. The second agent starts with full context without me having to assemble it manually.</p>
+  <p><strong>Generating prompts for other agents.</strong> When I need to spin up a separate agent for a specific task (building a demo, writing code, designing a feature), I can ask the knowledge base agent to generate a detailed prompt that includes all the relevant context from the repo. The second agent starts with full context without me having to assemble it manually.</p>
 
-  <p>Maintaining consistency across content. Blog posts, event descriptions, slide decks, product copy. All of it draws from the same source documents. When I update the product vision, every piece of content generated after that update reflects the new direction. No drift between what the website says, what the blog says, and what the slide deck says.</p>
+  <p><strong>Maintaining consistency across content.</strong> Blog posts, event descriptions, slide decks, product copy. All of it draws from the same source documents. When I update the product vision, every piece of content generated after that update reflects the new direction. No drift between what the website says, what the blog says, and what the slide deck says.</p>
 
-  <p>Catching contradictions. If I write something in a new document that conflicts with an earlier decision, the agent notices. It's searched the full repo. It knows what I said before.</p>
+  <p><strong>Catching contradictions.</strong> If I write something in a new document that conflicts with an earlier decision, the agent notices. It's searched the full repo. It knows what I said before.</p>
 
   <h3>What I'd Do Differently</h3>
 

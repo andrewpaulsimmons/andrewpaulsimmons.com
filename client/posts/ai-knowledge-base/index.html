@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>I Built a Knowledge Base That My AI Can Actually Use</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div>
+      <h1><a href="../../index.html">Andrew Paul Simmons</a></h1>
+      <p>PRODUCT ENGINEER</p>
+    </div>
+  </div>
+  <nav>
+    <a href="../../blog.html">BLOG</a>
+    <a href="../../work.html">WORK</a>
+    <a href="../../index.html">ABOUT ME</a>
+  </nav>
+</header>
+
+<article>
+  <div class="post-meta">Feb 25, 2026 · 8 min read</div>
+  <h2>I Built a Knowledge Base That My AI Can Actually Use</h2>
+
+  <p><em>How a folder of markdown files became the most productive tool in my workflow</em></p>
+
+  <p>I've been using Cursor with Claude as my primary working environment for a few months now. Not just for code. For product strategy, marketing copy, research, decision-making, and content generation.</p>
+
+  <p>Somewhere along the way I realized the bottleneck wasn't the AI. It was me. I kept starting fresh conversations, re-explaining context, watching the model reach the same conclusions I'd already arrived at last week. Every new chat was amnesia. Good amnesia, because the model is smart. But amnesia.</p>
+
+  <p>So I started building a knowledge base. Not a wiki. Not a Notion workspace. A folder of markdown files in a git repo, organized by topic, written in plain language, and designed so that an AI agent could get up to speed on my entire project in under 30 seconds.</p>
+
+  <p>It changed everything about how I work.</p>
+
+  <h3>The Setup</h3>
+
+  <p>The repo is simple. A root-level README that acts as a table of contents. Subdirectories for each domain: vision, products, technical architecture, research, marketing, decisions. Each file covers one topic. Each file starts with a one-line summary.</p>
+
+  <p>No database. No build step. No dependencies. Just .md files in folders, tracked by git.</p>
+
+  <p>The README is the most important file. When an agent opens a new conversation and I point it at the repo, the first thing it reads is the README. From that single file, it knows what exists, where to find it, and what each document covers. It can then read only the files it needs for the current task.</p>
+
+  <h3>How the Agent Actually Navigates It</h3>
+
+  <p>This is the part that surprised me.</p>
+
+  <p>I assumed the agent would follow hyperlinks between documents, the way a human reads a wiki. Click a link, read that page, click another link, follow a trail. That's how I'd navigate it.</p>
+
+  <p>The agent doesn't do that at all. It searches.</p>
+
+  <p>When it needs information, it runs parallel keyword searches across every file in the repo simultaneously. If I ask about a specific concept, it greps for that term across all 30+ files and gets back a list of every file and line where it appears. Then it reads the relevant files in full, in parallel. Two tool calls and it has complete context.</p>
+
+  <p>This means the agent doesn't care about the link structure. It cares about two things: the README (so it knows what exists) and consistent terminology (so its searches return clean results).</p>
+
+  <p>That second point took me a while to understand. If I call the same concept "pattern matching" in one document, "regex layer" in another, and "deterministic parsing" in a third, the agent has to run three separate searches to find all references. If I always call it "regex layer," one search finds everything.</p>
+
+  <p>I started thinking of this as registered terminology. Every concept in the project gets one canonical name. I use that name everywhere. The agent's search becomes a lookup instead of a scavenger hunt.</p>
+
+  <h3>What It Replaced</h3>
+
+  <p>Before the knowledge base, my workflow looked like this:</p>
+
+  <ul>
+    <li>Start a new conversation</li>
+    <li>Spend 5–10 minutes explaining context</li>
+    <li>Get useful output</li>
+    <li>Lose all of that context when the conversation ends</li>
+    <li>Repeat</li>
+  </ul>
+
+  <p>The knowledge base collapsed steps 1 and 2. Now I start a conversation, point it at the repo, and say "get up to speed." The agent reads the README, pulls the files it needs, and is ready to work in seconds. All the context I used to re-explain lives in the documents.</p>
+
+  <p>But the bigger change was less obvious. The knowledge base became the canonical record of every decision, every research finding, every piece of strategy. Before, that stuff lived in chat transcripts that nobody would ever re-read. Now it lives in files that are searchable, diffable, and version-controlled.</p>
+
+  <p>When I make a decision, I write it down in the decisions log with the date and the reasoning. When the agent starts a new conversation weeks later and I ask about that topic, it finds the decision. It doesn't re-derive it from first principles. It reads what I already decided and builds from there.</p>
+
+  <h3>Writing for an AI Reader</h3>
+
+  <p>I changed how I write documents once I understood how the agent reads them.</p>
+
+  <p><strong>Short files, not long ones.</strong> If a single file grows past 500 lines, the agent has to search within it or read it in chunks, which means it might miss context. Splitting a long document into focused files means each file gets read in full. The agent gets complete context for the topic without wading through unrelated material.</p>
+
+  <p><strong>Front-matter summaries.</strong> Every file starts with a one-line description, usually as a blockquote. The agent can read the first few lines of a file and decide whether it needs the rest. This saves time on large repos.</p>
+
+  <p><strong>One topic per file.</strong> If a product spec also contains research notes and a marketing draft, searches return that file for too many queries. Noise goes up, relevance goes down. Keep files focused.</p>
+
+  <p><strong>Descriptive filenames.</strong> <code>nlu-intent-research.md</code> tells the agent what's inside without opening it. <code>notes-v2-final.md</code> tells it nothing.</p>
+
+  <h3>What It's Good At Now</h3>
+
+  <p>With 30+ documents covering the full project, the knowledge base handles a few things surprisingly well.</p>
+
+  <p><strong>Starting new conversations cold.</strong> I don't prep the agent anymore. I just say "read the repo and get up to speed" and it does. Thirty seconds later it can answer detailed questions about architecture, marketing strategy, competitive landscape, or product specs.</p>
+
+  <p><strong>Generating prompts for other agents.</strong> When I need to spin up a separate agent for a specific task (building a demo, writing code, designing a feature), I can ask the knowledge base agent to generate a detailed prompt that includes all the relevant context from the repo. The second agent starts with full context without me having to assemble it manually.</p>
+
+  <p><strong>Maintaining consistency across content.</strong> Blog posts, event descriptions, slide decks, product copy. All of it draws from the same source documents. When I update the product vision, every piece of content generated after that update reflects the new direction. No drift between what the website says, what the blog says, and what the slide deck says.</p>
+
+  <p><strong>Catching contradictions.</strong> If I write something in a new document that conflicts with an earlier decision, the agent notices. It's searched the full repo; it knows what I said before. This is the closest thing I've found to an AI with institutional memory.</p>
+
+  <h3>What I'd Do Differently</h3>
+
+  <p>I started the knowledge base after months of conversations. A lot of context had to be reconstructed from chat transcripts. If I were starting a new project today, I'd create the repo on day one and write the first decision log entry before writing any code.</p>
+
+  <p>I'd also establish the terminology glossary early. The inconsistency problem compounds. Once you've written 20 documents with three different names for the same concept, normalizing them is tedious. Pick your terms upfront and stick with them.</p>
+
+  <p>And I'd keep the README ruthlessly maintained. It's the agent's entrypoint. If a file isn't in the README, the agent might not know it exists. If an obsolete file is still listed, the agent wastes time reading something that's no longer relevant.</p>
+
+  <h3>Why Markdown, Why Git</h3>
+
+  <p>People ask why I don't use Notion or Confluence or some purpose-built tool.</p>
+
+  <p>Markdown is plain text. Every AI model can read it natively. No API integration, no export step, no formatting translation. The agent reads the file directly.</p>
+
+  <p>Git gives me version history for free. I can see when a decision changed, what the previous version said, and who (or what) wrote it. When the agent drafts content, I review the diff before committing. The repo is the collaboration layer between me and the AI.</p>
+
+  <p>And the whole thing is portable. It's a folder. I can move it, copy it, back it up, open it in any editor. There's no vendor lock-in because there's no vendor.</p>
+
+  <h3>The Takeaway</h3>
+
+  <p>The best thing I did for my AI workflow wasn't finding a better model or writing better prompts. It was giving the model something to remember.</p>
+
+  <p>A knowledge base built for AI consumption turns every new conversation from a cold start into a warm handoff. The agent reads, searches, and picks up where the last conversation left off.</p>
+
+  <p>If you're doing serious work with AI and you're still relying on chat history to carry context, try this instead: make a folder, write some markdown files, keep a README, and point your agent at it. You'll be surprised how much faster everything gets when the AI can read your mind on the first message.</p>
+</article>
+
+<footer>
+  <div>&copy; 2026 by Andrew Paul Simmons.</div>
+  <div>
+    <b>Write</b>
+    <a href="mailto:hello@andrewpaulsimmons.com">hello@andrewpaulsimmons.com</a>
+  </div>
+  <div>
+    <b>Follow</b>
+    <div class="social">
+      <a href="https://twitter.com/AndrewPSimmons" target="_blank">&#x1D54F;</a>
+      <a href="https://www.linkedin.com/in/andrewpaulsimmons/" target="_blank">in</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

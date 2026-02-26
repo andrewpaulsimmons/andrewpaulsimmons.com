@@ -91,18 +91,6 @@
 
   <p>The agent maintains the decisions log. When we make a call during a conversation, the agent writes it down with the date and the reasoning. When a new conversation starts weeks later and I ask about that topic, the agent finds the decision. It doesn't re-derive it from first principles. It reads what we already decided and builds from there.</p>
 
-  <h3>Writing for an AI Reader</h3>
-
-  <p>I changed how I write documents once I understood how the agent reads them.</p>
-
-  <p>Short files. If a single file grows past 500 lines, the agent has to search within it or read it in chunks, which means it might miss context. Splitting a long document into focused files means each one gets read in full.</p>
-
-  <p>Front-matter summaries. Every file starts with a one-line description, usually as a blockquote. The agent can read the first few lines and decide whether it needs the rest.</p>
-
-  <p>One topic per file. If a product spec also contains research notes and a marketing draft, searches return that file for too many queries. Noise goes up, relevance goes down.</p>
-
-  <p>Descriptive filenames. <code>nlu-intent-research.md</code> tells the agent what's inside without opening it. <code>notes-v2-final.md</code> tells it nothing.</p>
-
   <h3>What It's Good At Now</h3>
 
   <p>With 30+ documents covering the full project, the knowledge base handles a few things well.</p>
